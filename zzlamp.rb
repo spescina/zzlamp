@@ -20,7 +20,7 @@ class ZzLamp
 
     # Register All Of The Configured Shared Folders
     settings["folders"].each do |folder|
-      config.vm.synced_folder folder["map"], folder["to"]
+      config.vm.synced_folder folder["map"], folder["to"], mount_options: ["dmode=777", "fmode=666"]
     end
   end
 end
