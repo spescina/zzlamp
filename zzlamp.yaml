@@ -3,11 +3,6 @@ memory: 2048
 cpus: 1
 name: zzlamp
 
-authorize: /Users/Simo/.ssh/id_rsa.pub
-
-keys:
-    - /Users/Simo/.ssh/id_rsa
-
 folders:
-    - map: /Users/Simo/Development/zzlamp/www
-      to: /var/www/public
+    - map: /Users/Simo/Development/web.dev/www
+      to: /var/public
