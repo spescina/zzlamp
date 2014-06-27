@@ -5,7 +5,7 @@ class ZzLamp
     config.vm.hostname = "zzlamp"
 
     # Configure A Private Network IP
-    config.vm.network :private_network, ip: settings["ip"] ||= "10.10.10.200"
+    config.vm.network :public_network, ip: settings["ip"] ||= "10.10.10.200"
 
     # Configure A Few VirtualBox Settings
     config.vm.provider "virtualbox" do |vb|
@@ -14,9 +14,11 @@ class ZzLamp
       vb.customize ["modifyvm", :id, "--cpus", settings["cpus"] ||= "1"]
       vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
       vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+      vb.gui = false 
     end
 
     config.ssh.private_key_path = "ssh/id_rsa"
+    config.ssh.forward_agent = true
 
     # Register All Of The Configured Shared Folders
     settings["folders"].each do |folder|
