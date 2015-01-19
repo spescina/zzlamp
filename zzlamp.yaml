@@ -1,9 +1,9 @@
 ---
-memory: 2048
+memory: 1024
 cpus: 1
 name: zzlamp
-ip: 192.168.1.111
+ip: 192.168.1.222
 
 folders:
-    - map: /Users/Simo/Development/web.dev/www
+    - map: C:\DEV\code
       to: /var/public
